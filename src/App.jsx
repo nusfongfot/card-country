@@ -16,26 +16,14 @@ function App() {
     setButton([])
   }
 
-  // const handleClick = (event) => {
-  //   setActive(event);
-  // }
+  const handleClick = (event) => {
+    setActive(event)
+  }
 
   const handleSecondClick = (e) => {
     setButton((oldArray) => [...oldArray, e])
-    if (
-      e === 'Male' ||
-      e === 'Female' ||
-      e === 'Bigender' ||
-      e === 'Non-binary' ||
-      e === 'Agender' ||
-      e === 'Polygender' ||
-      e === 'Genderfluid' ||
-      e === 'Genderqueer'
-    ) {
-      setActive(e)
-    }
+    handleClick(e)
   }
-  console.log(button)
 
   const handleClickFiltertwoElements = (e) => {
     let filterBigender
@@ -82,7 +70,13 @@ function App() {
           }}
           type='button'
           id='1'
-          className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Male'
+              ? 'active'
+              : undefined || button.includes('Male')
+              ? 'active'
+              : undefined
+          }
         >
           Male
         </button>
@@ -94,7 +88,13 @@ function App() {
           }}
           type='button'
           id='2'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Female'
+              ? 'active'
+              : undefined || button.includes('Female')
+              ? 'active'
+              : undefined
+          }
         >
           Female
         </button>
@@ -106,7 +106,13 @@ function App() {
           }}
           type='button'
           id='3'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Bigender'
+              ? 'active'
+              : undefined || button.includes('Bigender')
+              ? 'active'
+              : undefined
+          }
         >
           Bigender
         </button>
@@ -118,7 +124,13 @@ function App() {
           }}
           type='button'
           id='4'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Non-binary'
+              ? 'active'
+              : undefined || button.includes('Non-binary')
+              ? 'active'
+              : undefined
+          }
         >
           Non-binary
         </button>
@@ -130,7 +142,13 @@ function App() {
           }}
           type='button'
           id='5'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Agender'
+              ? 'active'
+              : undefined || button.includes('Agender')
+              ? 'active'
+              : undefined
+          }
         >
           Agender
         </button>
@@ -142,7 +160,13 @@ function App() {
           }}
           type='button'
           id='6'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Polygender'
+              ? 'active'
+              : undefined || button.includes('Polygender')
+              ? 'active'
+              : undefined
+          }
         >
           Polygender
         </button>
@@ -154,7 +178,13 @@ function App() {
           }}
           type='button'
           id='7'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Genderfluid'
+              ? 'active'
+              : undefined || button.includes('Genderfluid')
+              ? 'active'
+              : undefined
+          }
         >
           Genderfluid
         </button>
@@ -166,7 +196,13 @@ function App() {
           }}
           type='button'
           id='8'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Genderqueer'
+              ? 'active'
+              : undefined || button.includes('Genderqueer')
+              ? 'active'
+              : undefined
+          }
         >
           Genderqueer
         </button>
@@ -180,7 +216,13 @@ function App() {
           }}
           value='Brazil'
           id='9'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Brazil'
+              ? 'active'
+              : undefined || button.includes('Brazil')
+              ? 'active'
+              : undefined
+          }
         >
           Brazil
         </button>
@@ -192,7 +234,13 @@ function App() {
           }}
           value='Thailand'
           id='10'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Thailand'
+              ? 'active'
+              : undefined || button.includes('Thailand')
+              ? 'active'
+              : undefined
+          }
         >
           Thailand
         </button>
@@ -204,7 +252,13 @@ function App() {
           }}
           value='Sweden'
           id='11'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Sweden'
+              ? 'active'
+              : undefined || button.includes('Sweden')
+              ? 'active'
+              : undefined
+          }
         >
           Sweden
         </button>
@@ -216,7 +270,13 @@ function App() {
           }}
           value='Japan'
           id='12'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Japan'
+              ? 'active'
+              : undefined || button.includes('Japan')
+              ? 'active'
+              : undefined
+          }
         >
           Japan
         </button>
@@ -228,7 +288,13 @@ function App() {
           }}
           value='Netherlands'
           id='13'
-          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
+          className={
+            active === 'Netherlands'
+              ? 'active'
+              : undefined || button.includes('Netherlands')
+              ? 'active'
+              : undefined
+          }
         >
           Netherlands
         </button>
