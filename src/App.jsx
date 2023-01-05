@@ -6,92 +6,69 @@ import { useState, useEffect } from 'react'
 function App() {
   const [search, setSearch] = useState('')
   const [filterData, setFilterData] = useState([])
+  const [active, setActive] = useState('')
+  const [button, setButton] = useState([])
 
   const clearSearch = () => {
     setSearch('')
     setFilterData(data)
+    setActive(undefined)
+    setButton([])
   }
 
-  const handleClickGender = (e) => {
-    switch (e.target.value) {
-      case 'Male':
-        const filterMale = data.filter((item) => item.gender === e.target.value)
-        setFilterData(filterMale)
-        break
-      case 'Female':
-        const filterFemale = data.filter((item) => item.gender === e.target.value)
-        setFilterData(filterFemale)
-        break
-      case 'Bigender':
-        const filterBigender = data.filter((item) => item.gender === e.target.value)
-        setFilterData(filterBigender)
-        break
-      case 'Non-binary':
-        const filterNonBinary = data.filter((item) => item.gender === e.target.value)
-        setFilterData(filterNonBinary)
-        break
-      case 'Agender':
-        const filterAgender = data.filter((item) => item.gender === e.target.value)
-        setFilterData(filterAgender)
-        break
-      case 'Polygender':
-        const filerPolygender = data.filter((item) => item.gender === e.target.value)
-        setFilterData(filerPolygender)
-        break
-      case 'Genderfluid':
-        const filterGenderfluid = data.filter((item) => item.gender === e.target.value)
-        setFilterData(filterGenderfluid)
-        break
-      case 'Genderqueer':
-        const filterGenderqueer = data.filter((item) => item.gender === e.target.value)
-        setFilterData(filterGenderqueer)
-        break
-      default:
+  // const handleClick = (event) => {
+  //   setActive(event);
+  // }
+
+  const handleSecondClick = (e) => {
+    setButton((oldArray) => [...oldArray, e])
+    if (
+      e === 'Male' ||
+      e === 'Female' ||
+      e === 'Bigender' ||
+      e === 'Non-binary' ||
+      e === 'Agender' ||
+      e === 'Polygender' ||
+      e === 'Genderfluid' ||
+      e === 'Genderqueer'
+    ) {
+      setActive(e)
     }
   }
-  const handleClickCountry = (e) => {
-    switch (e.target.value) {
-      case 'Brazil':
-        const filterBrazil = data.filter((item) => item.country === e.target.value)
-        setFilterData(filterBrazil)
-        break
-      case 'Thailand':
-        const filterThailand = data.filter((item) => item.country === e.target.value)
-        setFilterData(filterThailand)
-        break
-      case 'Sweden':
-        const filerSweden = data.filter((item) => item.country === e.target.value)
-        setFilterData(filerSweden)
-        break
-      case 'Japan':
-        const filterJapan = data.filter((item) => item.country === e.target.value)
-        setFilterData(filterJapan)
-        break
-      case 'Netherlands':
-        const filterNetherlands = data.filter((item) => item.country === e.target.value)
-        setFilterData(filterNetherlands)
-        break
-      default:
-    }
-  }
+  console.log(button)
 
   const handleClickFiltertwoElements = (e) => {
     let filterBigender
-    if (e === 'Bigender' || e === 'Female') {
+    if (
+      e === 'Male' ||
+      e === 'Female' ||
+      e === 'Bigender' ||
+      e === 'Non-binary' ||
+      e === 'Agender' ||
+      e === 'Polygender' ||
+      e === 'Genderfluid' ||
+      e === 'Genderqueer'
+    ) {
       filterBigender = filterData.filter((item) => item.gender === e)
       setFilterData(filterBigender)
     }
 
-    if (e === 'Sweden' || e === 'Thailand') {
+    if (
+      e === 'Sweden' ||
+      e === 'Thailand' ||
+      e === 'Brazil' ||
+      e === 'Japan' ||
+      e === 'Netherlands'
+    ) {
       filterBigender = filterData.filter((item) => item.country === e)
       setFilterData(filterBigender)
     }
     console.log(e)
   }
 
-  // useEffect(() => {
-  //   setFilterData(data)
-  // }, [])
+  useEffect(() => {
+    setFilterData(data)
+  }, [])
 
   return (
     <div className='App'>
@@ -99,57 +76,97 @@ function App() {
       <div className='title'>
         <button
           value='Male'
-          onClick={handleClickGender}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           type='button'
+          id='1'
+          className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Male
         </button>
         <button
           value='Female'
-          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           type='button'
+          id='2'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Female
         </button>
         <button
           value='Bigender'
-          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           type='button'
+          id='3'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Bigender
         </button>
         <button
           value='Non-binary'
-          onClick={handleClickGender}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           type='button'
+          id='4'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Non-binary
         </button>
         <button
           value='Agender'
-          onClick={handleClickGender}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           type='button'
+          id='5'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Agender
         </button>
         <button
           value='Polygender'
-          onClick={handleClickGender}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           type='button'
+          id='6'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Polygender
         </button>
         <button
           value='Genderfluid'
-          onClick={handleClickGender}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           type='button'
+          id='7'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Genderfluid
         </button>
         <button
           value='Genderqueer'
-          onClick={handleClickGender}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           type='button'
+          id='8'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Genderqueer
         </button>
@@ -157,15 +174,25 @@ function App() {
       <div className='title'>
         <button
           type='button'
-          onClick={handleClickCountry}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           value='Brazil'
+          id='9'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Brazil
         </button>
         <button
           type='button'
-          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           value='Thailand'
+          id='10'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Thailand
         </button>
@@ -173,22 +200,35 @@ function App() {
           type='button'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
           }}
           value='Sweden'
+          id='11'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Sweden
         </button>
         <button
           type='button'
-          onClick={handleClickCountry}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           value='Japan'
+          id='12'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Japan
         </button>
         <button
           type='button'
-          onClick={handleClickCountry}
+          onClick={(e) => {
+            handleClickFiltertwoElements(e.target.value)
+            handleSecondClick(e.target.value)
+          }}
           value='Netherlands'
+          id='13'
+          // className={button.length === 1 || button.length === 2 ? 'active' : undefined}
         >
           Netherlands
         </button>

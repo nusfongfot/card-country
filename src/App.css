@@ -46,3 +46,16 @@
   gap: 5px;
   font-size: 13px;
 }
+
+.active {
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: rgba(204, 237, 236, 0.8);
+  padding: 10px 20px;
+  border:none;
+  outline: none;
+  font-size:14px;
+}
