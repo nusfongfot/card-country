@@ -16,42 +16,13 @@ function App() {
     setButton([])
   }
 
-  const handleClick = (event) => {
-    setActive(event)
-  }
-
-  const handleSecondClick = (e) => {
+  const handleActiveTwoButton = (e) => {
     setButton((oldArray) => [...oldArray, e])
-    handleClick(e)
   }
 
   const handleClickFiltertwoElements = (e) => {
-    let filterBigender
-    if (
-      e === 'Male' ||
-      e === 'Female' ||
-      e === 'Bigender' ||
-      e === 'Non-binary' ||
-      e === 'Agender' ||
-      e === 'Polygender' ||
-      e === 'Genderfluid' ||
-      e === 'Genderqueer'
-    ) {
-      filterBigender = filterData.filter((item) => item.gender === e)
-      setFilterData(filterBigender)
-    }
-
-    if (
-      e === 'Sweden' ||
-      e === 'Thailand' ||
-      e === 'Brazil' ||
-      e === 'Japan' ||
-      e === 'Netherlands'
-    ) {
-      filterBigender = filterData.filter((item) => item.country === e)
-      setFilterData(filterBigender)
-    }
-    console.log(e)
+    const filterBigender = filterData.filter((item) => item.gender === e || item.country === e)
+    setFilterData(filterBigender)
   }
 
   useEffect(() => {
@@ -66,17 +37,10 @@ function App() {
           value='Male'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           type='button'
-          id='1'
-          className={
-            active === 'Male'
-              ? 'active'
-              : undefined || button.includes('Male')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Male') ? 'active' : undefined}
         >
           Male
         </button>
@@ -84,17 +48,10 @@ function App() {
           value='Female'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           type='button'
-          id='2'
-          className={
-            active === 'Female'
-              ? 'active'
-              : undefined || button.includes('Female')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Female') ? 'active' : undefined}
         >
           Female
         </button>
@@ -102,17 +59,10 @@ function App() {
           value='Bigender'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           type='button'
-          id='3'
-          className={
-            active === 'Bigender'
-              ? 'active'
-              : undefined || button.includes('Bigender')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Bigender') ? 'active' : undefined}
         >
           Bigender
         </button>
@@ -120,17 +70,10 @@ function App() {
           value='Non-binary'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           type='button'
-          id='4'
-          className={
-            active === 'Non-binary'
-              ? 'active'
-              : undefined || button.includes('Non-binary')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Non-binary') ? 'active' : undefined}
         >
           Non-binary
         </button>
@@ -138,17 +81,10 @@ function App() {
           value='Agender'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           type='button'
-          id='5'
-          className={
-            active === 'Agender'
-              ? 'active'
-              : undefined || button.includes('Agender')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Agender') ? 'active' : undefined}
         >
           Agender
         </button>
@@ -156,17 +92,10 @@ function App() {
           value='Polygender'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           type='button'
-          id='6'
-          className={
-            active === 'Polygender'
-              ? 'active'
-              : undefined || button.includes('Polygender')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Polygender') ? 'active' : undefined}
         >
           Polygender
         </button>
@@ -174,17 +103,10 @@ function App() {
           value='Genderfluid'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           type='button'
-          id='7'
-          className={
-            active === 'Genderfluid'
-              ? 'active'
-              : undefined || button.includes('Genderfluid')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Genderfluid') ? 'active' : undefined}
         >
           Genderfluid
         </button>
@@ -192,17 +114,10 @@ function App() {
           value='Genderqueer'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           type='button'
-          id='8'
-          className={
-            active === 'Genderqueer'
-              ? 'active'
-              : undefined || button.includes('Genderqueer')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Genderqueer') ? 'active' : undefined}
         >
           Genderqueer
         </button>
@@ -212,17 +127,10 @@ function App() {
           type='button'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           value='Brazil'
-          id='9'
-          className={
-            active === 'Brazil'
-              ? 'active'
-              : undefined || button.includes('Brazil')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Brazil') ? 'active' : undefined}
         >
           Brazil
         </button>
@@ -230,17 +138,10 @@ function App() {
           type='button'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           value='Thailand'
-          id='10'
-          className={
-            active === 'Thailand'
-              ? 'active'
-              : undefined || button.includes('Thailand')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Thailand') ? 'active' : undefined}
         >
           Thailand
         </button>
@@ -248,17 +149,10 @@ function App() {
           type='button'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           value='Sweden'
-          id='11'
-          className={
-            active === 'Sweden'
-              ? 'active'
-              : undefined || button.includes('Sweden')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Sweden') ? 'active' : undefined}
         >
           Sweden
         </button>
@@ -266,17 +160,10 @@ function App() {
           type='button'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           value='Japan'
-          id='12'
-          className={
-            active === 'Japan'
-              ? 'active'
-              : undefined || button.includes('Japan')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Japan') ? 'active' : undefined}
         >
           Japan
         </button>
@@ -284,17 +171,10 @@ function App() {
           type='button'
           onClick={(e) => {
             handleClickFiltertwoElements(e.target.value)
-            handleSecondClick(e.target.value)
+            handleActiveTwoButton(e.target.value)
           }}
           value='Netherlands'
-          id='13'
-          className={
-            active === 'Netherlands'
-              ? 'active'
-              : undefined || button.includes('Netherlands')
-              ? 'active'
-              : undefined
-          }
+          className={button.includes('Netherlands') ? 'active' : undefined}
         >
           Netherlands
         </button>
