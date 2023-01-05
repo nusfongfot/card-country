@@ -23,6 +23,7 @@ function App() {
   const handleClickFiltertwoElements = (e) => {
     const filterBigender = filterData.filter((item) => item.gender === e || item.country === e)
     setFilterData(filterBigender)
+    handleActiveTwoButton(e)
   }
 
   useEffect(() => {
@@ -35,10 +36,7 @@ function App() {
       <div className='title'>
         <button
           value='Male'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           type='button'
           className={button.includes('Male') ? 'active' : undefined}
         >
@@ -46,10 +44,7 @@ function App() {
         </button>
         <button
           value='Female'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           type='button'
           className={button.includes('Female') ? 'active' : undefined}
         >
@@ -57,10 +52,7 @@ function App() {
         </button>
         <button
           value='Bigender'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           type='button'
           className={button.includes('Bigender') ? 'active' : undefined}
         >
@@ -68,10 +60,7 @@ function App() {
         </button>
         <button
           value='Non-binary'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           type='button'
           className={button.includes('Non-binary') ? 'active' : undefined}
         >
@@ -79,10 +68,7 @@ function App() {
         </button>
         <button
           value='Agender'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           type='button'
           className={button.includes('Agender') ? 'active' : undefined}
         >
@@ -90,10 +76,7 @@ function App() {
         </button>
         <button
           value='Polygender'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           type='button'
           className={button.includes('Polygender') ? 'active' : undefined}
         >
@@ -101,10 +84,7 @@ function App() {
         </button>
         <button
           value='Genderfluid'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           type='button'
           className={button.includes('Genderfluid') ? 'active' : undefined}
         >
@@ -112,10 +92,7 @@ function App() {
         </button>
         <button
           value='Genderqueer'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           type='button'
           className={button.includes('Genderqueer') ? 'active' : undefined}
         >
@@ -125,10 +102,7 @@ function App() {
       <div className='title'>
         <button
           type='button'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           value='Brazil'
           className={button.includes('Brazil') ? 'active' : undefined}
         >
@@ -136,10 +110,7 @@ function App() {
         </button>
         <button
           type='button'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           value='Thailand'
           className={button.includes('Thailand') ? 'active' : undefined}
         >
@@ -147,10 +118,7 @@ function App() {
         </button>
         <button
           type='button'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           value='Sweden'
           className={button.includes('Sweden') ? 'active' : undefined}
         >
@@ -158,10 +126,7 @@ function App() {
         </button>
         <button
           type='button'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           value='Japan'
           className={button.includes('Japan') ? 'active' : undefined}
         >
@@ -169,10 +134,7 @@ function App() {
         </button>
         <button
           type='button'
-          onClick={(e) => {
-            handleClickFiltertwoElements(e.target.value)
-            handleActiveTwoButton(e.target.value)
-          }}
+          onClick={(e) => handleClickFiltertwoElements(e.target.value)}
           value='Netherlands'
           className={button.includes('Netherlands') ? 'active' : undefined}
         >
